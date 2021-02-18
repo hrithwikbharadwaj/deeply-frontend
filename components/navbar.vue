@@ -12,6 +12,12 @@
 
         <template #end>
             <b-navbar-item tag="div">
+                <div v-if="isAuthenticated">
+                    <nuxt-link to="links">
+                     <b-button> My Links </b-button>
+                    </nuxt-link>
+                </div>
+                <div v-else>
                 <div class="buttons">
                     <nuxt-link to ="/register">
                     <a class="button is-primary">
@@ -24,7 +30,27 @@
                     </a>
                     </nuxt-link>
                 </div>
+                </div>
             </b-navbar-item>
         </template>
     </b-navbar>
 </template> 
+
+<script>
+import { mapGetters } from 'vuex'
+
+
+export default {
+   computed:{
+  ...mapGetters(['isAuthenticated', 'loggedInUser']) 
+
+  },
+  data(){
+    return{
+      
+  }
+  },
+  
+  
+}
+</script>

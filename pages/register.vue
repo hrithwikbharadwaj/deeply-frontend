@@ -30,11 +30,11 @@
             </b-input>
         </b-field>
 
-       <div class="buttons">
+      
           
             <b-button @click="registerForm(userInfo)" type="is-primary is-light">Register</b-button>
             </div>
-        </div>
+     
     </section>
 </template>
 

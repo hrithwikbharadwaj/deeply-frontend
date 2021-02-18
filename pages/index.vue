@@ -2,8 +2,34 @@
 
   
   <div v-if="$auth.loggedIn">
-    <section class="section is-medium" >
-    <h2> hello {{loggedInUser.name}} </h2>
+    <!-- TITLE -->
+    <section class="section " >
+    <h2 class="subtitle home-hero"> Hello {{loggedInUser.name}} </h2>
+ 
+      
+    </section>
+
+    <!-- FORM FOR SHORTENING -->
+
+    <section>
+       {{shorturl}}
+        <b-notification
+            v-if="error"
+            type="is-danger"
+            aria-close-label="Close notification"
+            role="alert">
+           {{error}}
+     </b-notification> 
+
+
+          <b-field label="URL" maxlength="50">
+            <b-input required v-model="urlData.longURL"></b-input>
+        </b-field>
+
+         <b-field label="Slug(optional)">
+            <b-input  v-model="urlData.slug"></b-input>
+        </b-field>
+        <b-button @click="shortenURL(urlData)" type="is-primary is-light">Shorten</b-button>
     </section>
   </div>
   
@@ -30,10 +56,34 @@ export default {
   ...mapGetters(['isAuthenticated', 'loggedInUser']) 
 
   },
+  data(){
+    return{
+      error:null,
+      urlData:{
+
+        longURL:"",
+        slug:null,
+        
+      },
+      shorturl:""
+    }
+  },
   name: 'HomePage',
 
   components: {
     Card
+  },
+  methods:{
+    async shortenURL(urlData){
+     try{
+      let res=  await  this.$axios.post('url/shorten',urlData)
+      console.log(res.data.shortUrl)
+     this.shorturl= res.data.shortUrl
+     }
+     catch(e){
+         this.error = e.response.data
+     }
+    }
   }
 }
 </script>

@@ -10,8 +10,9 @@
             role="alert">
            {{error}}
     </b-notification>
-        <b-field label="Email"
-            >
+
+        <b-field label="Email">
+            
             <b-input type="email"
                 value="john@"
                 maxlength="30"
@@ -28,11 +29,11 @@
             </b-input>
         </b-field>
 
-       <div class="buttons">
+       
           
             <b-button @click="loginForm(userInfo)" type="is-primary is-light">Login</b-button>
             </div>
-    </div>
+
     </section>
 </template>
 
