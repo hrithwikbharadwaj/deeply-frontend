@@ -13,7 +13,7 @@
         <template #end>
             <b-navbar-item tag="div">
                 <div v-if="isAuthenticated">
-                    <nuxt-link :to="{ name: 'links', params: loggedInUser._id}">
+                    <nuxt-link :to="`/${loggedInUser._id}`">
                      <b-button> My Links </b-button>
                     </nuxt-link>
                 </div>

@@ -1,7 +1,7 @@
 <template>
     
 <section class="section">
-      Works bro
+     New shit
         <div class="container">
            
             <h2> Here are some of your Links that you have created.</h2>
@@ -23,7 +23,7 @@
           
         
             <b-table-column field="first_name" label="Slug" v-slot="props" >
-                <nuxt-link :to="props.row.slug">
+                <nuxt-link :to="`userLinks/${props.row.slug}`">
                 {{ props.row.slug }}
                 </nuxt-link>
             </b-table-column>
