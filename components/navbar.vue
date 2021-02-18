@@ -14,20 +14,23 @@
             <b-navbar-item tag="div">
                 <div v-if="isAuthenticated">
                     <nuxt-link :to="`/${loggedInUser._id}`">
-                     <b-button> My Links </b-button>
+                     <b-button class="button is-primary"> My Links </b-button>
                     </nuxt-link>
+                    
+                     <b-button @click="logout"> Logout </b-button>
+                   
                 </div>
                 <div v-else>
                 <div class="buttons">
                     <nuxt-link to ="/register">
-                    <a class="button is-primary">
-                        <strong>Sign up</strong>
-                    </a>
+                  
+                       <b-button class="button is-primary"> <strong>Sign up</strong></b-button>
+                    
                     </nuxt-link>
+                    
                     <nuxt-link to ="/login">
-                    <a class="button is-light">
-                        Log in
-                    </a>
+                       <b-button class="button is-light" style="margin-left: 20px;"> Log in</b-button> 
+                   
                     </nuxt-link>
                 </div>
                 </div>
@@ -50,6 +53,20 @@ export default {
       
   }
   },
+  methods:{
+      async logout(){
+          console.log('here')
+          try{
+
+              await this.$auth.logout();
+               this.$router.push('/');
+          }
+          catch(e){
+              console.log(e)
+          }
+          
+      }
+  }
   
   
 }
