@@ -7,23 +7,7 @@ export default {
     credentials: false,
     proxyHeaders: false
   },
-  pwa:{
-    manifest: {
-      name: 'RichURL',
-      useWebmanifestExtension: false,
-      short_name:'RichURL',
-      lang: 'en',
-      share_target:{
-        action:'/',
-        method:'GET',
-        params:{
-          
-          text:'videolink'
-        }
-      }
-      
-    }
-  },
+  
   auth: {
     
     redirect: {
@@ -87,9 +71,21 @@ export default {
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
-  pwa: {
+  pwa:{
     manifest: {
-      lang: 'en'
+      name: 'RichURL',
+      useWebmanifestExtension: false,
+      short_name:'RichURL',
+      lang: 'en',
+      share_target:{
+        action:'/',
+        method:'GET',
+        params:{
+          
+          text:'videolink'
+        }
+      }
+      
     }
   },
 
