@@ -32,6 +32,13 @@
             role="alert">
            {{copiedText}}
     </b-notification>
+    <b-notification
+            v-if="shared"
+            type="is-info is-light"
+            aria-close-label="Close notification"
+            role="alert">
+           {{shared}}
+    </b-notification>
  <b-loading  v-model="isLoading" ></b-loading>
 <!-- Notification Section END -->
 
@@ -88,6 +95,7 @@ export default {
   data(){
     return{
       error:null,
+      shared:null,
       copiedText:"",
       isLoading: false,
       urlData:{
@@ -103,6 +111,15 @@ export default {
 
   components: {
     Card
+  },
+  mounted(){
+    if(this.$route.query.videolink!=undefined){
+      this.urlData.longURL=this.$route.query.videolink;
+      this.shared="Add a slug and press shorten"
+    }
+    else{
+     
+    }
   },
   methods:{
     async copyItem(){

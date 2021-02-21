@@ -7,6 +7,22 @@ export default {
     credentials: false,
     proxyHeaders: false
   },
+  pwa:{
+    manifest: {
+      name: 'RichURL',
+      short_name:'RichURL',
+      lang: 'en',
+      share_target:{
+        action:'/',
+        method:'GET',
+        params:{
+          
+          text:'videolink'
+        }
+      }
+      
+    }
+  },
   auth: {
     
     redirect: {
