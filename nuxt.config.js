@@ -22,6 +22,7 @@ export default {
         },
         token: {
           property: 'token',
+          maxAge: 60 * 60 * 24 * 30,
           // required: true,
           type: ''
         },
