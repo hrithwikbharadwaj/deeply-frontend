@@ -10,6 +10,7 @@ export default {
   pwa:{
     manifest: {
       name: 'RichURL',
+      useWebmanifestExtension: false,
       short_name:'RichURL',
       lang: 'en',
       share_target:{
