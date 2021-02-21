@@ -10,7 +10,8 @@
  
       
     </section>
-<div class="column is-half">
+    <div class="container">
+<div class="column ">
     <!-- FORM FOR SHORTENING START -->
     
 
@@ -31,7 +32,7 @@
             role="alert">
            {{copiedText}}
     </b-notification>
-
+ <b-loading  v-model="isLoading" ></b-loading>
 <!-- Notification Section END -->
 
           <b-field label="URL" maxlength="50">
@@ -53,6 +54,7 @@
     
 </div>
   </div>
+  </div>
   
   <div v-else>
     <section>
@@ -67,7 +69,13 @@
     </div> 
  
 </template>
-
+<style scoped>
+.columns.is-vcentered {
+ -webkit-box-align: center;
+     -ms-flex-align: center;
+        align-items: center;
+}
+</style>
 <script>
 import { mapGetters } from 'vuex'
 import Card from '~/components/Card'
@@ -81,7 +89,7 @@ export default {
     return{
       error:null,
       copiedText:"",
-      
+      isLoading: false,
       urlData:{
 
         longURL:"",
@@ -131,18 +139,24 @@ export default {
       
     async shortenURL(urlData){
      try{
+       console.log("hello")
+       this.isLoading = true
+       
       let res=  await  this.$axios.post('url/shorten',urlData)
       
      this.shorturl= res.data.shortUrl
      const text = this.shorturl
+     
         try {
           await navigator.clipboard.writeText(text)
+          this.isLoading = false
           this.copiedText = `Copied ${this.shorturl} to clipboard`;
         } catch (err) {
           console.error('Failed to copy!', err)
         }
      }
      catch(e){
+       this.isLoading = false
          this.error = e.response.data
      }
     }

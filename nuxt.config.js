@@ -1,4 +1,6 @@
 export default {
+  ssr: false ,// Disable Server Side rendering
+  // target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
   axios: {
     baseURL: 'https://richurl.tech/api/',
@@ -53,6 +55,7 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/pwa',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
