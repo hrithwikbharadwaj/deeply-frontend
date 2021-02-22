@@ -4,7 +4,7 @@
             <b-navbar-item tag="router-link" :to="{ path: '/' }">
                 <img
                     src="../static/richurl.png"
-                    alt="Lightweight UI components for Vue.js based on Bulma"
+                    alt="Create Deep Links for YouTube"
                 >
             </b-navbar-item>
         </template>
@@ -24,7 +24,7 @@
                 <div class="buttons">
                     <nuxt-link to ="/register">
                   
-                       <b-button class="button is-primary"> <strong>Sign up</strong></b-button>
+                       <b-button class="button is-danger"> <strong>Sign up</strong></b-button>
                     
                     </nuxt-link>
                     

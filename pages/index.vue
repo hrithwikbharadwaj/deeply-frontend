@@ -1,5 +1,5 @@
 <template>
-
+  
   <!-- Content for Logged in users  -->
   <div v-if="$auth.loggedIn">
     
@@ -34,7 +34,7 @@
     </b-notification>
     <b-notification
             v-if="shared"
-            type="is-info is-light"
+            auto-close type="is-info is-light"
             aria-close-label="Close notification"
             role="alert">
            {{shared}}
@@ -62,18 +62,35 @@
 </div>
   </div>
   </div>
+  <!-- If not Loged in  -->
+<div v-else>
+    <section class="section " >
+      <div class="content">
+        <div class="container">
+          <div class="columns">
+              <div class="column" animation="fade">
+                <h1> Boost Engagement </h1> 
+                  <p> on your YouTube Channel with one click </p>
+                   <div class="buttons">
+           <nuxt-link to="register"> <b-button type="is-danger">Get Started</b-button></nuxt-link>
+           </div>
+              </div>
+              <div class="column" animation="fade" >
+                   <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1602691361972/tzUp6E9OQ.gif" alt="" class="home__img">
+              </div>
+            
+          </div>
+         
+      
+        
   
-  <div v-else>
-    <section>
-      <h1> rich url </h1> 
-      <p> Create Deep Links in seconds </p>
-  <div class="buttons">
-    
-           <nuxt-link to="register"> <b-button type="is-primary">Get Started</b-button></nuxt-link>
-   </div>
-    </section>
+            
 
-    </div> 
+         </div>
+      </div> 
+    </section>
+    
+</div> 
  
 </template>
 <style scoped>
@@ -81,6 +98,12 @@
  -webkit-box-align: center;
      -ms-flex-align: center;
         align-items: center;
+}
+
+body {
+  font-family: 'montserrat';
+  
+  
 }
 </style>
 <script>
