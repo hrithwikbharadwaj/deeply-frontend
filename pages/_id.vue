@@ -1,7 +1,7 @@
 <template>
     
 <section class="section">
-     New shit
+  
         <div class="container">
            
             <h2> Here are some of your Links that you have created.</h2>
@@ -46,6 +46,7 @@
 
 <script>
   export default {
+    middleware: 'auth',
       data(){
         const data = [
                 { 'id': 1, 'first_name': 'Jesse', 'last_name': 'Simmons', 'date': '2016/10/15 13:43:27', 'gender': 'Male' },

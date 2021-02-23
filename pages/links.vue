@@ -5,6 +5,7 @@
         <div class="container">
            <h2> Here are some of your Links that you have created.</h2>
            <br>
+            
             <b-table
             :data="loggedInUser.urls"
         
@@ -14,11 +15,13 @@
         
             :focusable="isFocusable"
             :mobile-cards="hasMobileCards">
-
+  
             <b-table-column field="id" label="Host" width="40" numeric v-slot="props">
-                {{ props.row.host }}    
+        <nuxt-link :to="props.row.slug">
+                {{ props.row.host }}   
+                </nuxt-link> 
             </b-table-column>
-
+        
           
         
             <b-table-column field="first_name" label="Slug" v-slot="props" >
@@ -29,15 +32,18 @@
         
 
               <b-table-column field="Deep Link" label="Deep Link" v-slot="props">
+                  <nuxt-link :to="props.row.shortUrl">
                 {{ props.row.shortUrl }}
+                </nuxt-link>
             </b-table-column>
-
+   
 
            
 
             
-
+  
         </b-table>
+    
  
         </div>
 </section>
@@ -47,6 +53,7 @@
 <script>
 import { mapGetters } from 'vuex'
 export default {
+    middleware: 'auth',
     data(){
         
         return{
