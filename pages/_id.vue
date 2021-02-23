@@ -123,7 +123,7 @@ async copyItem(item){
 
       if (slugDetails.urls.length!=0) {
         isEmpty=false;
-        console.log("working")
+       
       }
         
         

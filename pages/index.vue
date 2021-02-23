@@ -167,7 +167,7 @@ export default {
       
     async shortenURL(urlData){
      try{
-       console.log("hello")
+       
        this.isLoading = true;
        
       let res=  await  this.$axios.post('url/shorten',urlData)
