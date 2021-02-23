@@ -3,14 +3,14 @@
         <div class="container">
         
 
-<b-notification
+    <b-notification
             v-if="error"
             type="is-danger"
             aria-close-label="Close notification"
             role="alert">
            {{error}}
     </b-notification>
-
+<b-loading  v-model="isLoading" ></b-loading>
         <b-field label="Email">
             
             <b-input type="email"
@@ -43,21 +43,24 @@
         
         methods:{
         async loginForm(userInfo){
+            this.isLoading = true
       try{
 
           await this.$auth.loginWith('local',{
               data:userInfo
           })
+          this.isLoading = false;
            await this.$router.push('/');
       }
        catch(e){
-          
+            this.isLoading = false;
             this.error = e.response.data
        }
 }
         },
         data() {
             return {
+                isLoading: false,
                 userInfo:{
 
                     name: 'John Silver',

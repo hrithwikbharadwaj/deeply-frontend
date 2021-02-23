@@ -34,7 +34,7 @@
     </b-notification>
     <b-notification
             v-if="shared"
-            auto-close type="is-info is-light"
+            auto-close type="is-success is-light"
             aria-close-label="Close notification"
             role="alert">
            {{shared}}
@@ -93,19 +93,7 @@
 </div> 
  
 </template>
-<style scoped>
-.columns.is-vcentered {
- -webkit-box-align: center;
-     -ms-flex-align: center;
-        align-items: center;
-}
 
-body {
-  font-family: 'montserrat';
-  
-  
-}
-</style>
 <script>
 import { mapGetters } from 'vuex'
 import Card from '~/components/Card'
@@ -138,7 +126,7 @@ export default {
   mounted(){
     if(this.$route.query.videolink!=undefined){
       this.urlData.longURL=this.$route.query.videolink;
-      this.shared="Add a slug and press shorten"
+      this.shared="Link Added 🎉. Please add a slug and press shorten"
     }
     else{
      
@@ -180,7 +168,7 @@ export default {
     async shortenURL(urlData){
      try{
        console.log("hello")
-       this.isLoading = true
+       this.isLoading = true;
        
       let res=  await  this.$axios.post('url/shorten',urlData)
       
@@ -204,3 +192,89 @@ export default {
   }
 
 </script>
+
+<style lang="scss">
+// Import Bulma's core
+@import "~bulma/sass/utilities/_all";
+
+// Set your colors
+$primary: #ec5f68;
+$primary-light: findLightColor($primary);
+$primary-dark: findDarkColor($primary);
+$primary-invert: findColorInvert($primary);
+$twitter: #4099FF;
+$twitter-invert: findColorInvert($twitter);
+
+// Lists and maps
+$custom-colors: null !default;
+$custom-shades: null !default;
+
+// Setup $colors to use as bulma classes (e.g. 'is-twitter')
+$colors: mergeColorMaps(
+    (
+        "white": (
+            $white,
+            $black,
+        ),
+        "black": (
+            $black,
+            $white,
+        ),
+        "light": (
+            $light,
+            $light-invert,
+        ),
+        "dark": (
+            $dark,
+            $dark-invert,
+        ),
+        "primary": (
+            $primary,
+            $primary-invert,
+            $primary-light,
+            $primary-dark,
+        ),
+        "link": (
+            $link,
+            $link-invert,
+            $link-light,
+            $link-dark,
+        ),
+        "info": (
+            $info,
+            $info-invert,
+            $info-light,
+            $info-dark,
+        ),
+        "success": (
+            $success,
+            $success-invert,
+            $success-light,
+            $success-dark,
+        ),
+        "warning": (
+            $warning,
+            $warning-invert,
+            $warning-light,
+            $warning-dark,
+        ),
+        "danger": (
+            $danger,
+            $danger-invert,
+            $danger-light,
+            $danger-dark,
+        ),
+    ),
+    $custom-colors
+);
+
+// Links
+$link: $primary;
+$link-invert: $primary-invert;
+$link-focus-border: $primary;
+
+// Import Bulma and Buefy styles
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
+
+</style>

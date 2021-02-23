@@ -44,6 +44,7 @@
        
         data() {
             return {
+                isLoading: false,
                 userInfo:{
 
                     name: 'John Silver',
@@ -55,17 +56,20 @@
             },
         methods:{
             async registerForm(userInfo){
+                
                 try{
-
+                    this.isLoading = true;
                     await this.$axios.post('users/signup',userInfo)
 
                     await this.$auth.loginWith('local',{
                             data:userInfo
                         })
+                     this.isLoading = false;
 
                     this.$router.push('/')
                 }
                 catch(e){
+                     this.isLoading = false;
                    this.error = e.response.data
                 }
 
