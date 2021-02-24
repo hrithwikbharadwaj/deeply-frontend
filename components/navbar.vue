@@ -13,12 +13,15 @@
         <template #end>
             <b-navbar-item tag="div">
                 <div v-if="isAuthenticated">
+                    <a href="https://twitter.com/intent/tweet?text=Check%20out%20https%3A%2F%2Frichurl.tech%2Fcreate%20by%20%40HSBTechYt%20which%20helps%20you%20create%20deep%20links%20for%20%40YouTube%20and%20%40amazon%20for%20FREE!">
+                       <b-button class="button is-link"> <strong>Share on Twitter</strong></b-button>
+                    </a>
                     <nuxt-link :to="`/${loggedInUser._id}`">
                      <b-button class="button is-primary"> My Links </b-button>
                     </nuxt-link>
                     
                      <b-button @click="logout"> Logout </b-button>
-                   
+                 
                 </div>
                 <div v-else>
                 <div class="buttons">
@@ -32,6 +35,7 @@
                        <b-button class="button is-light" style="margin-left: 20px;"> Log in</b-button> 
                    
                     </nuxt-link>
+                    
                 </div>
                 </div>
             </b-navbar-item>

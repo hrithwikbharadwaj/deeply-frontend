@@ -10,28 +10,58 @@
             role="alert">
            {{error}}
     </b-notification>
+      <br> 
 <b-loading  v-model="isLoading" ></b-loading>
-        <b-field label="Email">
-            
+         <div class="box box-shadow-lift" style="box-shadow: #ffffff 0 7px 25px 0;">
+                 <div class="columns is-multiline">
+                    <div class="column">
+                    <div class="columns">
+                        <div class="column left" style="boarder-right:4px">
+                         
+                              <h1 class="title is-1">Hey Welcome back 👋 </h1>
+                              <br>
+                               <h3 class=" subtitled subtitle has-text-grey is-5 has-text-weight-normal is-family-Segoe UI">
+            More features incoming..
+            </h3>
+                        </div>
+                    
+        
+        
+         <div class="column right ">
+
+           
+
+        <b-field >
+           
             <b-input type="email"
                 value="john@"
                 maxlength="30"
+                icon="email"
+                placeholder="Enter your Email"
                 v-model="userInfo.email">
+            </b-input>
+        </b-field>
+           <b-field>
+            <b-input type="password"
+                icon="lock"
+                v-model="userInfo.password"
+                placeholder="Enter your password"
+                password-reveal>
             </b-input>
         </b-field>
    
        
 
-        <b-field label="Password">
-            <b-input type="password"
-                v-model="userInfo.password"
-                password-reveal>
-            </b-input>
-        </b-field>
+        
 
-       
+      
           
-            <b-button @click="loginForm(userInfo)" type="is-primary is-light">Login</b-button>
+            <b-button @click="loginForm(userInfo)" type="is-primary is-medium is-light">Login</b-button>
+            </div>
+        </div>
+        </div>
+        </div>
+                    </div>
             </div>
 
     </section>
@@ -54,7 +84,7 @@
       }
        catch(e){
             this.isLoading = false;
-            this.error = e.response.data
+            this.error = e.response.data.error
        }
 }
         },
@@ -63,12 +93,47 @@
                 isLoading: false,
                 userInfo:{
 
-                    name: 'John Silver',
-                    email:"hyrdy@gmail.com",
-                    password:"test123"
+                  
+                    email:"",
+                    password:""
                 },
                 error:null
             }
         }
     }
 </script>
+
+<style scoped>
+    
+    
+        
+    
+    .left {
+      border-right: 5px solid black;
+    }
+      @media only screen and (max-width: 600px) {
+          .left {
+      border-right: 0px;
+    }
+      }  
+    .left .title {
+      font-weight: 800;
+      letter-spacing: -2px;
+    }
+
+    .left .colored {
+      color: var(--brandColor);
+      font-weight: 500;
+      margin-top: 1rem !important;
+      letter-spacing: -1px;
+    }
+
+    .left p {
+      color: var(--textLight);
+      font-size: 1.15rem;
+    }
+   .footer {
+ margin-top: 280px;
+}
+
+</style>

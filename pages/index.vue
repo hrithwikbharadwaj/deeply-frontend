@@ -4,8 +4,19 @@
   <div v-if="$auth.loggedIn">
     
     <section class="section " >
+       
       <div class="content">
-    <h2 class="subtitle home-hero"> Hello {{loggedInUser.name}} </h2>
+        <div class="container">
+          <center> 
+         <div class="box">
+
+         <p>
+            Create FREE Deep Links which you can share with your audience.
+           </p>
+            <p> Paste your link or click on the clipboard icon to get started.    </p>
+         </div></center>
+        </div>
+     
       </div>
  
       
@@ -16,7 +27,7 @@
     
 
    
-    <section>
+    <section >
       <!-- Notifications Start -->
         <b-notification
             v-if="error"
@@ -42,53 +53,100 @@
  <b-loading  v-model="isLoading" ></b-loading>
 <!-- Notification Section END -->
 
+<!-- Form input begin -->
+
+
+  
+<div class="box">
           <b-field label="URL" maxlength="50">
             <b-input required
              v-model="urlData.longURL"
-              icon-right="clipboard"
+              size="is-medium"
+              type="is-primary"
+              pack="ionicons"
+              icon-right="clipboard "
               icon-right-clickable
+             
               @icon-right-click="copyItem"></b-input>
         </b-field>
 
-         <b-field label="Slug(optional)">
-            <b-input  v-model="urlData.slug"></b-input>
+         <b-field label="Custom Slug(optional)">
+            <b-input  v-model="urlData.slug"
+             size="is-medium"></b-input>
         </b-field>
-        <b-button @click="shortenURL(urlData)" type="is-primary is-light">Shorten</b-button>
+
+        <div class="column is-vcentered">
+        <b-button @click="shortenURL(urlData)" type="is-primary is-light is-medium">Generate</b-button>
+</div>
+        </div>
+
+ <!-- Form input END -->
         
          
         
     </section>
+    <div class="dummyBody">
+    </div>
     
 </div>
   </div>
   </div>
-  <!-- If not Loged in  -->
+
+
+
+
+
+
+  <!-- Landing Page  -->
 <div v-else>
-    <section class="section " >
-      <div class="content">
+  <body>
+    <section class="hero  is-fullheight ">
+     <div class="hero-body">
         <div class="container">
           <div class="columns">
               <div class="column" animation="fade">
-                <h1> Boost Engagement </h1> 
-                  <p> on your YouTube Channel with one click </p>
+               <h1 class="title titled is-1 mb-6">
+              Boost Engagement
+            </h1>
+             <h2 class=" subtitled subtitle has-text-grey is-4 has-text-weight-normal is-family-sans-serif">
+              on your YouTube Channel with one click.
+            </h2>
+                  <p> </p>
                    <div class="buttons">
-           <nuxt-link to="register"> <b-button type="is-danger">Get Started</b-button></nuxt-link>
+           <nuxt-link to="register"> <b-button  size="is-large" type="is-danger">Get Started</b-button></nuxt-link>
            </div>
               </div>
               <div class="column" animation="fade" >
-                   <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1602691361972/tzUp6E9OQ.gif" alt="" class="home__img">
+                   <img src="../static/youtubeEngagement.svg" alt="" class="home__img" style="height:300px">
               </div>
-            
+              
+             </div> 
+             <br>
+             <br>
+         <!-- End of columns  -->
+          <div class="columns">
+               <div data-aos="fade-right" class="column">
+                   <img src="../static/socialmedia.svg" alt="" class="home__img" style="height:300px">
+              </div>
+                <div class="column"  >
+                  <h3 class="title titled is-5 mb-6" > Install as an PWA </h3>
+                  <h1 class="title titled is-1 mb-6"> Directly Share Links
+to the app </h1>
+   <h2 class=" subtitled subtitle has-text-grey is-4 has-text-weight-normal is-family-Segoe UI">
+              on your YouTube Channel with one click.
+            </h2>
+              <nuxt-link to="register"> <b-button id="btnAddInstall" size="is-large" type="is-danger">Install app</b-button></nuxt-link>
+                </div>
           </div>
-         
       
         
-  
+ 
             
 
          </div>
       </div> 
     </section>
+  </body>
     
 </div> 
  
@@ -126,7 +184,7 @@ export default {
   mounted(){
     if(this.$route.query.videolink!=undefined){
       this.urlData.longURL=this.$route.query.videolink;
-      this.shared="Link Added 🎉. Please add a slug and press shorten"
+      this.shared="Link Added 🎉. Please add a slug and press Generate"
     }
     else{
      
@@ -150,20 +208,7 @@ export default {
        
      }
     },
-  //  async  pasteItem(copiedUrl){
-  //     console.log("working copyurl");
-  //           if (!navigator.clipboard) {
-  //         // Clipboard API not available
-  //         return
-  //       }
-  //       const text = copiedUrl
-  //       try {
-  //         await navigator.clipboard.writeText(text)
-  //         this.copiedText = `Copied ${copiedUrl} to clipboard`;
-  //       } catch (err) {
-  //         console.error('Failed to copy!', err)
-  //       }
-  //   },
+
       
     async shortenURL(urlData){
      try{
@@ -195,6 +240,7 @@ export default {
 
 <style lang="scss">
 // Import Bulma's core
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,600&display=swap');
 @import "~bulma/sass/utilities/_all";
 
 // Set your colors
@@ -204,11 +250,11 @@ $primary-dark: findDarkColor($primary);
 $primary-invert: findColorInvert($primary);
 $twitter: #4099FF;
 $twitter-invert: findColorInvert($twitter);
-
+$footer-padding:1.5rem 1.5rem 3rem;
 // Lists and maps
 $custom-colors: null !default;
 $custom-shades: null !default;
-
+$body-background-color:#e5e7eb;
 // Setup $colors to use as bulma classes (e.g. 'is-twitter')
 $colors: mergeColorMaps(
     (
@@ -268,6 +314,7 @@ $colors: mergeColorMaps(
     $custom-colors
 );
 
+
 // Links
 $link: $primary;
 $link-invert: $primary-invert;
@@ -278,3 +325,4 @@ $link-focus-border: $primary;
 @import "~buefy/src/scss/buefy";
 
 </style>
+

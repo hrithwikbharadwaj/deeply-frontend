@@ -10,6 +10,7 @@
             
             <h2> Here are some of your Links that you have created. </h2>
            <br>
+           
             <b-table
             :data="slugDetails.urls"
         
