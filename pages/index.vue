@@ -87,11 +87,18 @@
          
         
     </section>
-    <div class="dummyBody">
-    </div>
+    
     
 </div>
+
   </div>
+  <footer class="footer" style="margin-top:230px">
+  <div class="content has-text-centered">
+    <p>
+     Made with ❤️ by <a href="https://twitter.com/intent/follow?screen_name=HSBTechYt"> Hrithwik Bharadwaj</a>
+    </p>
+  </div>
+</footer>
   </div>
 
 
@@ -126,19 +133,35 @@
              <br>
              <br>
          <!-- End of columns  -->
-          <div class="columns">
+          <div class="columns"  style="margin-top:30px">
                <div data-aos="fade-right" class="column">
-                   <img src="../static/socialmedia.svg" alt="" class="home__img" style="height:300px">
+                   <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1614234210359/9ACtJGsmm.gif" alt="" class="home__img" style="height:300px">
               </div>
                 <div class="column"  >
-                  <h3 class="title titled is-5 mb-6" > Install as an PWA </h3>
-                  <h1 class="title titled is-1 mb-6"> Directly Share Links
+                  <h3 class="title titled is-5 mb-6" > Send users directly to YouTube and Amazon App </h3>
+                  <h1 class="title titled is-1 mb-6"> resulting in better Engagement,</h1>
+   <h2 class=" subtitled subtitle has-text-grey is-4 has-text-weight-normal is-family-Segoe UI">
+             Sales and Revenue.
+            </h2>
+              
+                </div>
+          </div>
+     
+     
+       <div class="columns" style="margin-top:60px;boarder-top:4px" >
+              
+                <div class="column"  >
+                  <h3 class="title titled is-5 mb-6" style="margin-top:50px" >Install the PWA and  </h3>
+                  <h1 class="title titled is-1 mb-6" style="margin-top:50px" > Directly Share Links
 to the app </h1>
    <h2 class=" subtitled subtitle has-text-grey is-4 has-text-weight-normal is-family-Segoe UI">
-              on your YouTube Channel with one click.
+             and hit Generate
             </h2>
-               <b-button @click="install()" size="is-large" type="is-danger">Install app</b-button>
+              
                 </div>
+                 <div data-aos="fade-right" class="column">
+                   <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1614230907803/qyVg9Kczq.gif" alt="" class="home__img" style="height:300px">
+              </div>
           </div>
       
         
@@ -147,6 +170,13 @@ to the app </h1>
 
          </div>
       </div> 
+      <footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+     Made with ❤️ by <a href="https://twitter.com/intent/follow?screen_name=HSBTechYt"> Hrithwik Bharadwaj</a>
+    </p>
+  </div>
+</footer>
     </section>
   </body>
     
@@ -184,17 +214,18 @@ export default {
   components: {
     Card
   },
-  created(){
+//   created(){
   
-window.addEventListener("beforeinstallprompt", e => {
-      e.preventDefault();
-      console.log("am i ther")
-      // Stash the event so it can be triggered later.
-      this.deferredPrompt = e;
-    });window.addEventListener("appinstalled", () => {
-      this.deferredPrompt = null;
-    });
-  },
+// window.addEventListener("beforeinstallprompt", e => {
+//       e.preventDefault();
+//       console.log("I am open for Dev Jobs")
+//       // Stash the event so it can be triggered later.
+//       e.preventDefault();
+//       this.deferredPrompt = e;
+//     });window.addEventListener("appinstalled", () => {
+//       this.deferredPrompt = null;
+//     });
+//   },
   mounted(){
     if(this.$route.query.videolink!=undefined){
       this.urlData.longURL=this.$route.query.videolink;
@@ -203,13 +234,13 @@ window.addEventListener("beforeinstallprompt", e => {
     
   },
   methods:{
-    async dismiss() {
-      this.deferredPrompt = null;
-    },
-    async install() {
-      console.log("came here")
-      this.deferredPrompt.prompt();
-    },
+    // async dismiss() {
+    //   this.deferredPrompt = null;
+    // },
+    // async install() {
+      
+    //   this.deferredPrompt.prompt();
+    // },
     async copyItem(){
       
     
@@ -258,7 +289,24 @@ window.addEventListener("beforeinstallprompt", e => {
 </script>
 
 
-
+<style >
+.content {
+  flex: 1 0 auto;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+html, body {
+  height: 100%;
+}
+footer{
+  margin-top: auto;
+}
+.footer {
+  flex-shrink: 0;
+}
+</style>
 
 <style lang="scss">
 // Import Bulma's core
