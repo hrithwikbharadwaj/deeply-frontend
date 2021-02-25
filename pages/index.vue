@@ -32,12 +32,14 @@
         <b-notification
             v-if="error"
             type="is-danger"
+             auto-close
             aria-close-label="Close notification"
             role="alert">
            {{error}}
      </b-notification> 
      <b-notification
             v-if="copiedText"
+             auto-close
             type="is-success"
             aria-close-label="Close notification"
             role="alert">
@@ -135,7 +137,7 @@ to the app </h1>
    <h2 class=" subtitled subtitle has-text-grey is-4 has-text-weight-normal is-family-Segoe UI">
               on your YouTube Channel with one click.
             </h2>
-              <nuxt-link to="register"> <b-button id="btnAddInstall" size="is-large" type="is-danger">Install app</b-button></nuxt-link>
+               <b-button @click="install()" size="is-large" type="is-danger">Install app</b-button>
                 </div>
           </div>
       
@@ -165,6 +167,7 @@ export default {
     return{
       error:null,
       shared:null,
+      deferredPrompt:null,
       copiedText:"",
       isLoading: false,
       urlData:{
@@ -181,16 +184,32 @@ export default {
   components: {
     Card
   },
+  created(){
+  
+window.addEventListener("beforeinstallprompt", e => {
+      e.preventDefault();
+      console.log("am i ther")
+      // Stash the event so it can be triggered later.
+      this.deferredPrompt = e;
+    });window.addEventListener("appinstalled", () => {
+      this.deferredPrompt = null;
+    });
+  },
   mounted(){
     if(this.$route.query.videolink!=undefined){
       this.urlData.longURL=this.$route.query.videolink;
       this.shared="Link Added 🎉. Please add a slug and press Generate"
     }
-    else{
-     
-    }
+    
   },
   methods:{
+    async dismiss() {
+      this.deferredPrompt = null;
+    },
+    async install() {
+      console.log("came here")
+      this.deferredPrompt.prompt();
+    },
     async copyItem(){
       
     
@@ -237,6 +256,9 @@ export default {
   }
 
 </script>
+
+
+
 
 <style lang="scss">
 // Import Bulma's core

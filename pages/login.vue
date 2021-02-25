@@ -37,6 +37,7 @@
                 value="john@"
                 maxlength="30"
                 icon="email"
+                required
                 placeholder="Enter your Email"
                 v-model="userInfo.email">
             </b-input>
@@ -45,6 +46,7 @@
             <b-input type="password"
                 icon="lock"
                 v-model="userInfo.password"
+                required
                 placeholder="Enter your password"
                 password-reveal>
             </b-input>
@@ -94,8 +96,8 @@
                 userInfo:{
 
                   
-                    email:"",
-                    password:""
+                    email:null,
+                    password:null
                 },
                 error:null
             }

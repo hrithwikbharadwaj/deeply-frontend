@@ -7,7 +7,14 @@
                <p> You have not yet created any rich url. Go create now !</p> <br> P.S "It's FREE"😃 <br> <br>  <nuxt-link to="/"> <b-button type="is-danger" rounded>Rounded</b-button></nuxt-link>
            </div>
            <div v-else>
-            
+            <b-notification
+            v-if="copiedText"
+             auto-close
+            type="is-success"
+            aria-close-label="Close notification"
+            role="alert">
+           {{copiedText}}
+       </b-notification>
             <h2> Here are some of your Links that you have created. </h2>
            <br>
            
@@ -84,7 +91,7 @@
        
        
         return{
-                
+                copiedText:"",
                 users:null,
                 isStriped: true,
                 isHoverable: true,
@@ -105,6 +112,7 @@ async copyItem(item){
       
      try {
           await navigator.clipboard.writeText(item)
+           this.copiedText = `Copied ${this.shorturl} to clipboard`;
           
         } catch (err) {
           console.error('Failed to copy!', err)

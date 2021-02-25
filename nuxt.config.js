@@ -67,13 +67,15 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     '@nuxtjs/axios',
-    '@nuxtjs/auth-next'
+    '@nuxtjs/auth-next',
+    '@nuxtjs/robots'
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa:{
     manifest: {
       name: 'RichURL',
+      description: 'Create Rich Deep Links for free',
       useWebmanifestExtension: false,
       short_name:'RichURL',
       lang: 'en',

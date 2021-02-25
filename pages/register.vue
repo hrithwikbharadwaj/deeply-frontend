@@ -30,6 +30,7 @@
             <b-input v-model="userInfo.name"
             
             icon="account"
+             required
              placeholder="Enter your Name"></b-input>
                  </b-field>
 
@@ -39,6 +40,7 @@
                 value="john@"
                 maxlength="30"
                 icon="email"
+                 required=true
                 placeholder="Enter your Email"
                 v-model="userInfo.email">
             </b-input>
@@ -46,6 +48,7 @@
            <b-field>
             <b-input type="password"
                 icon="lock"
+                 required
                 v-model="userInfo.password"
                 placeholder="Create a strong password"
                 password-reveal>
@@ -79,9 +82,9 @@
                 isLoading: false,
                 userInfo:{
 
-                    name: "",
-                    email:"",
-                    password:""
+                    name: null,
+                    email:null,
+                    password:null
                 },
                 error:null,
                  }   
