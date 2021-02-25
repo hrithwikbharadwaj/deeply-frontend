@@ -20,9 +20,12 @@
                      <b-button class="button is-primary"> My Links </b-button>
                     </nuxt-link>
                     
-                     <b-button @click="logout"> Logout </b-button>
+        
+    
+                     <b-button @click="logout" class="logoutStyle"> Logout </b-button>
                  
                 </div>
+
                 <div v-else>
                 <div class="buttons">
                     <nuxt-link to ="/register">
@@ -42,7 +45,15 @@
         </template>
     </b-navbar>
 </template> 
+<style scoped>
 
+     @media only screen and (max-width: 600px) {
+          .logoutStyle {
+      margin-top: 20px;
+    }
+    
+}
+</style>
 <script>
 import { mapGetters } from 'vuex'
 
