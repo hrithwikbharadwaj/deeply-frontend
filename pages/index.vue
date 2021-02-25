@@ -151,8 +151,8 @@
        <div class="columns" style="margin-top:60px;boarder-top:4px" >
               
                 <div class="column"  >
-                  <h3 class="title titled is-5 mb-6" style="margin-top:50px" >Install the PWA and  </h3>
-                  <h1 class="title titled is-1 mb-6" style="margin-top:50px" > Directly Share Links
+                >
+                  <h1 class="title titled is-1 mb-6" style="margin-top:70px" > Directly Share Links
 to the app </h1>
    <h2 class=" subtitled subtitle has-text-grey is-4 has-text-weight-normal is-family-Segoe UI">
              and hit Generate
