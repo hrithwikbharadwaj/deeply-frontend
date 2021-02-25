@@ -135,12 +135,12 @@
          <!-- End of columns  -->
           <div class="columns"  style="margin-top:30px">
                <div data-aos="fade-right" class="column">
-                   <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1614234210359/9ACtJGsmm.gif" alt="" class="home__img" style="height:300px">
+                   <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1614234210359/9ACtJGsmm.gif" alt="" class="home__img" >
               </div>
                 <div class="column"  >
                   <h3 class="title titled is-5 mb-6" > Send users directly to YouTube and Amazon App </h3>
                   <h1 class="title titled is-1 mb-6"> resulting in better Engagement,</h1>
-   <h2 class=" subtitled subtitle has-text-grey is-4 has-text-weight-normal is-family-Segoe UI">
+   <h2 class=" subtitled subtitle has-text-grey is-4 has-text-weight-bold is-family-Segoe UI">
              Sales and Revenue.
             </h2>
               
@@ -159,8 +159,8 @@ to the app </h1>
             </h2>
               
                 </div>
-                 <div data-aos="fade-right" class="column">
-                   <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1614230907803/qyVg9Kczq.gif" alt="" class="home__img" style="height:300px">
+                 <div data-aos="fade-right" class="column-right">
+                   <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1614230907803/qyVg9Kczq.gif" alt="" class="home__img" >
               </div>
           </div>
       
@@ -197,7 +197,7 @@ export default {
     return{
       error:null,
       shared:null,
-      deferredPrompt:null,
+      // deferredPrompt:null,
       copiedText:"",
       isLoading: false,
       urlData:{
