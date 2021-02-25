@@ -133,6 +133,7 @@
              <br>
              <br>
          <!-- End of columns  -->
+         <div class="box">
           <div class="columns"  style="margin-top:30px">
                <div data-aos="fade-right" class="column">
                    <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1614234210359/9ACtJGsmm.gif" alt="" class="home__img" >
@@ -146,13 +147,13 @@
               
                 </div>
           </div>
-     
-     
+        </div>
+     <div class="box">
        <div class="columns" style="margin-top:60px;boarder-top:4px" >
-              
+               
                 <div class="column"  >
-                >
-                  <h1 class="title titled is-1 mb-6" style="margin-top:70px" > Directly Share Links
+               
+                  <h1 class="title titled is-1 mb-6" style="margin-top:50px" > Directly Share Links
 to the app </h1>
    <h2 class=" subtitled subtitle has-text-grey is-4 has-text-weight-normal is-family-Segoe UI">
              and hit Generate
@@ -167,7 +168,7 @@ to the app </h1>
         
  
             
-
+       </div>
          </div>
       </div> 
       <footer class="footer">
@@ -299,6 +300,7 @@ body {
 }
 html, body {
   height: 100%;
+  font-family: Montserrat;
 }
 footer{
   margin-top: auto;
@@ -310,7 +312,7 @@ footer{
 
 <style lang="scss">
 // Import Bulma's core
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 @import "~bulma/sass/utilities/_all";
 
 // Set your colors
@@ -324,6 +326,8 @@ $footer-padding:1.5rem 1.5rem 3rem;
 // Lists and maps
 $custom-colors: null !default;
 $custom-shades: null !default;
+$font-family-sans-serif: 'Montserrat';
+$family-primary:'Montserrat';
 $body-background-color:#e5e7eb;
 // Setup $colors to use as bulma classes (e.g. 'is-twitter')
 $colors: mergeColorMaps(
