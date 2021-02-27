@@ -3,7 +3,7 @@
 <section class="section">
    <div class="container">
      
-       
+       <div class="box">
           <div class="card">
             <div class="card-content">
               <div class="content">
@@ -72,7 +72,7 @@
         </div>
     
       
-             
+             </div>
           
   </div> 
 </section>

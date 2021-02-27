@@ -324,6 +324,7 @@ $twitter: #4099ff;
 $twitter-invert: findColorInvert($twitter);
 $footer-padding: 1.5rem 1.5rem 3rem;
 // Lists and maps
+
 $custom-colors: null !default;
 $custom-shades: null !default;
 $font-family-sans-serif: "Montserrat";

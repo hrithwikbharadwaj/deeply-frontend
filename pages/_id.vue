@@ -112,7 +112,7 @@ async copyItem(item){
       
      try {
           await navigator.clipboard.writeText(item)
-           this.copiedText = `Copied ${this.shorturl} to clipboard`;
+           this.copiedText = `Copied ${item} to clipboard`;
           
         } catch (err) {
           console.error('Failed to copy!', err)
