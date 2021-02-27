@@ -1,4 +1,11 @@
-# richurl
+# Richurl
+
+This is my submission for the Amplify Hashnode Hackathon. This can be used to generate deep links for YouTube and Amazon for free.
+Feel Free to contribute and help me simplfy the User Experience.
+
+![ezgif.com-video-to-gif(1).gif](https://cdn.hashnode.com/res/hashnode/image/upload/v1614234210359/9ACtJGsmm.gif)
+
+Read more about project [here](https://blog.hrithwik.me/i-created-a-deep-linking-tech-for-youtube-influencers-and-marketeers)
 
 ## Build Setup
 
@@ -16,5 +23,3 @@ $ npm run start
 # generate static project
 $ npm run generate
 ```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
