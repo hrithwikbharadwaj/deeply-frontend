@@ -123,6 +123,9 @@ export default {
 
         this.shorturl = res.data.shortUrl;
         const text = this.shorturl;
+        this.urlData.slug="";
+        this.urlData.longURL="";
+        
 
         try {
           await navigator.clipboard.writeText(text);
@@ -133,7 +136,10 @@ export default {
         }
       } catch (e) {
         this.isLoading = false;
-        this.error = e.response.data;
+        this.error = e.response.data.error;
+        this.urlData.slug="";
+        this.urlData.longURL="";
+       
       }
     }
   }
