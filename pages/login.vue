@@ -86,7 +86,7 @@
       }
        catch(e){
             this.isLoading = false;
-            this.error = e.response.data
+            this.error = e.response.data.error
        }
 }
         },
