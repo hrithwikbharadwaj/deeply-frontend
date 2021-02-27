@@ -1,4 +1,4 @@
-# Richurl
+# RichURL
 
 This is my submission for the Amplify Hashnode Hackathon.
 This is built on [Nuxt](https://nuxtjs.org/) and [Buefy](https://buefy.org/documentation/start/).
