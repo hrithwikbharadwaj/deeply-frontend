@@ -17,7 +17,7 @@
         </div>
       </div>
     </section>
-    
+
     <GenerateLink/>
     <Footer/>
   </div>
@@ -47,24 +47,5 @@ export default {
 };
 </script>
 
-<style>
-.content {
-  flex: 1 0 auto;
-}
-body {
-  display: flex;
-  flex-direction: column;
-}
-html,
-body {
-  height: 100%;
-  font-family: Montserrat;
-}
-footer {
-  margin-top: auto;
-}
-.footer {
-  flex-shrink: 0;
-}
-</style>
+
 

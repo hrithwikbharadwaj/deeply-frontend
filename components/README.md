@@ -1,7 +1,10 @@
 # COMPONENTS
 
-**This directory is not required, you can delete it if you don't want to use it.**
+**This directory contains all components**
 
-The components directory contains your Vue.js Components.
-
-_Nuxt.js doesn't supercharge these components._
+- LandingPage.vue (For rendering landing page)
+- GenerateLink.vue ( Form which takes url and slug in the index)
+- ListLinks.vue (For showing all the links created by a user)
+- navbar.vue (Contains Navbar)
+- LinkDetails.vue (Statastics of Links)
+- Footer.vue (Contains Footer)
