@@ -72,7 +72,7 @@ export default {
                 
         }
     },
-     props: {
+  props: {
    values: {
     //   type: String,
       required: true

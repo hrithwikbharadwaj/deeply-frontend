@@ -32,10 +32,27 @@ export default {
       }
     }
   },
+
   head: {
     title: 'richurl',
+    
+   
     meta: [
       { charset: 'utf-8' },
+      {name:'title',content:'RichURL.tech - Create Deep Links for YouTube to Boost Engagement'},
+      {name:'description',content:'Generating Rich URLs sends your audience directly to the destination app instead of opening links on browsers'},
+      // Twitter
+      {property:'twitter:card',content:'summary_large_image'},
+      {property:'twitter:url',content:'https://main.d378z6kep2qz7.amplifyapp.com/'},
+      {property:'twitter:title',content:'RichURL.tech - Create Deep Links for YouTube to Boost Engagement'},
+      {property:'twitter:description',content:'Generating Rich URLs  sends your audience directly to the destination app instead of opening links on browsers'},
+      {property:'twitter:image',content:'https://cdn.hashnode.com/res/hashnode/image/upload/v1615527111179/KnzL0oivp.png'},
+          // Facebook
+      {property:'og:type',content:'website'},
+      {property:'og:url',content:'https://main.d378z6kep2qz7.amplifyapp.com/'},
+      {property:'og:title',content:'RichURL.tech - Create Deep Links for YouTube to Boost Engagement'},
+      {property:'og:description',content:'Generating Rich URLs  sends your audience directly to the destination app instead of opening links on browsers'},
+      {property:'og:image',content:'https://cdn.hashnode.com/res/hashnode/image/upload/v1615527111179/KnzL0oivp.png'},
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' }
     ],
@@ -43,15 +60,14 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '~/assets/css/main.scss'
   ],
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
+
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -63,13 +79,13 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/buefy
+    
     'nuxt-buefy', 
-    // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     '@nuxtjs/axios',
     '@nuxtjs/auth-next',
     '@nuxtjs/robots'
+    
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
