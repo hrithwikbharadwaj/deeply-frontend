@@ -40,19 +40,20 @@ export default {
     meta: [
       { charset: 'utf-8' },
       {name:'title',content:'RichURL.tech - Create Deep Links for YouTube to Boost Engagement'},
+      {name:'keywords',content:'RichURL.tech, DeepLinking for free, Deep Link to YouTube'},
       {name:'description',content:'Generating Rich URLs sends your audience directly to the destination app instead of opening links on browsers'},
       // Twitter
       {property:'twitter:card',content:'summary_large_image'},
       {property:'twitter:url',content:'https://main.d378z6kep2qz7.amplifyapp.com/'},
       {property:'twitter:title',content:'RichURL.tech - Create Deep Links for YouTube to Boost Engagement'},
       {property:'twitter:description',content:'Generating Rich URLs  sends your audience directly to the destination app instead of opening links on browsers'},
-      {property:'twitter:image',content:'https://cdn.hashnode.com/res/hashnode/image/upload/v1615527111179/KnzL0oivp.png'},
+      {property:'twitter:image',content:'https://cdn.hashnode.com/res/hashnode/image/upload/v1615527953429/pdz1DFkD_.png'},
           // Facebook
       {property:'og:type',content:'website'},
       {property:'og:url',content:'https://main.d378z6kep2qz7.amplifyapp.com/'},
       {property:'og:title',content:'RichURL.tech - Create Deep Links for YouTube to Boost Engagement'},
       {property:'og:description',content:'Generating Rich URLs  sends your audience directly to the destination app instead of opening links on browsers'},
-      {property:'og:image',content:'https://cdn.hashnode.com/res/hashnode/image/upload/v1615527111179/KnzL0oivp.png'},
+      {property:'og:image',content:'https://cdn.hashnode.com/res/hashnode/image/upload/v1615527953429/pdz1DFkD_.png'},
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' }
     ],
