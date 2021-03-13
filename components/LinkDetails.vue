@@ -1,5 +1,5 @@
 <template>
-<div style="padding:100px"> 
+<div id="cardPad" > 
     
     <div class="card" >
         <div class="card-content">

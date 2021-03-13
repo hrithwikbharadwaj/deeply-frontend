@@ -1,4 +1,5 @@
 <template>
+
   <!-- Content for Logged in users  -->
   <div v-if="$auth.loggedIn">
     <section class="section ">

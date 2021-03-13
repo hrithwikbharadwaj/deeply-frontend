@@ -88,6 +88,7 @@ export default {
     '@nuxtjs/robots'
     
   ],
+  
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa:{
