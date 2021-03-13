@@ -1,7 +1,7 @@
 <template>
-<div>
+<div style="padding:100px"> 
     
-    <div class="card">
+    <div class="card" >
         <div class="card-content">
             <div class="content">
             Original URL : {{slugDetails.longURL}}
@@ -68,7 +68,8 @@
                         </div>
                     </div>
 
-                </div>            
+                </div>    
+                        
         </div>
     </div>
 
@@ -79,6 +80,7 @@
 
 <script>
 export default {
+    
     props: {
    slugDetails: {
     //   type: String,
