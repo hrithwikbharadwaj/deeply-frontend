@@ -31,7 +31,7 @@
             
             icon="account"
              required
-             placeholder="Enter your Name"></b-input>
+             placeholder="Enter your Full Name"></b-input>
                  </b-field>
 
         <b-field >
