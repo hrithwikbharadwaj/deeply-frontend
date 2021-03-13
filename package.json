@@ -17,10 +17,11 @@
     "nuxt": "^2.14.12",
     "nuxt-buefy": "^0.4.4",
     "sass": "^1.32.8",
+    "@nuxtjs/pwa": "^3.3.5",
     "vue-chartjs": "^3.5.1"
   },
   "devDependencies": {
-    "@nuxtjs/pwa": "^3.3.5",
+    
     "node-sass": "^5.0.0",
     "sass-loader": "^10.1.1"
   }
