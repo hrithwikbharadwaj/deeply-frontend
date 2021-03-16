@@ -22,12 +22,14 @@
         </div>
        
         <b-table 
+        :paginated="isPaginated"
+        :per-page="perPage"
         :data=slugDetails.trafficByCity
         :sort-icon="sortIcon"
         :sort-icon-size="sortIconSize"
-        default-sort="slugDetails.trafficByCity[0]">
+        :default-sort=slugDetails.trafficByCity[0]>
        
-           <b-table-column label="City" centered v-slot="props">
+           <b-table-column label="City" centered  v-slot="props">
            
             {{ props.row[0] }}
             </b-table-column> 
@@ -69,6 +71,8 @@
   export default {
    data() {
       return{
+                isPaginated: true,
+                perPage: 5,
                 defaultSortDirection: 'asc',
                 sortIcon: 'arrow-up',
                 sortIconSize: 'is-small',

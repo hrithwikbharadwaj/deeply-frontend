@@ -15,6 +15,9 @@
 
     <b-table
             :data="values"
+
+             :paginated="isPaginated"
+            :per-page="perPage"
         
             :striped="isStriped"
            
@@ -69,6 +72,9 @@ export default {
                 isFocusable: true,
                 hasMobileCards: true,
                 userLinks:null,
+                isPaginated: true,
+                perPage: 5
+
                 
         }
     },
